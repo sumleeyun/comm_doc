@@ -1,0 +1,73 @@
+<?xml version="1.0" ?>
+<odoo>
+
+  <record id="view_form_procurement" model="ir.ui.view">
+    <field name="name">เอกสารจัดซื้อ-จัดจ้าง </field>
+    <field name="model">comm.procurement</field>
+    <field name="arch" type="xml">
+      <form string="procurement">
+
+        <sheet>
+          <group>
+            <group>
+              <separator string="เลขที่ใบสัญญญา" />
+              <field name="number_type" />
+              <field name="procu_number" />
+            </group>
+            <group>
+              <separator string="รหัสจัดซื้อจัดจ้าง" />
+              <field name="codetype" />
+              <!--<field name="work_type" attrs="{'invisible':[('qrtype','!=',3)]}"/-->
+              <field name="procu_code" />
+            </group>
+            <group>
+              <field name="name" />
+              <field name="date_published" />
+            </group>
+            <group>
+              <field name="chairman_id" widget="many2many_tags" />
+              <field name="secretary_id" widget="many2many_tags" />
+            </group>
+
+            
+              <field name="upload_file" widget="many2many_binary" />
+              <field name="description" widget="html" />
+              <field name="active" />
+            
+          </group>
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_tree_procurement" model="ir.ui.view">
+    <field name="name">เอกสารจัดซื้อ-จัดจ้าง List</field>
+    <field name="model">comm.procurement</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="procu_number" />
+        <field name="codetype" />
+        <field name="procu_code" />
+        <field name="name" />
+        <field name="date_published" />
+        <field name="chairman_id" widget="many2many_tags" />
+        <field name="secretary_id" widget="many2many_tags" />
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_search_procurement" model="ir.ui.view">
+    <field name="name">procurement Filters</field>
+    <field name="model">comm.procurement</field>
+    <field name="arch" type="xml">
+      <search>
+
+        <field name="name" />
+        <!--filter string="ค้นหาตามรหัส" name="codetype" domain="[('codetype','=',จ)]"/-->
+        <filter name="filter_inactive" string="Inactive" domain="[('active','=',True)]" />
+        <filter name="filter_active" string="Active" domain="[('active','=',False)]" />
+      </search>
+    </field>
+  </record>
+
+</odoo>

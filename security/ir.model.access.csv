@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_doc_user,doc User Access,model_comm_doc,comm_group_user,1,0,0,0
+access_doc_manager,doc Manager Access,model_comm_doc,comm_group_manager,1,1,1,1
+access_doc_type_user,doc User Access,model_comm_doc_type,comm_group_user,1,0,0,0
+access_doc__type_manager,doc Manager Access,model_comm_doc_type,comm_group_manager,1,1,1,1
+access_doc_procurement_user,doc User Access,model_comm_procurement,comm_group_user,1,0,0,0
+access_doc__procurement_manager,doc Manager Access,model_comm_procurement,comm_group_manager,1,1,1,1

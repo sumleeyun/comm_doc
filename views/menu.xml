@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<odoo>
+
+
+      <act_window id="action_comm_doc_type" name="config" res_model="comm.doc_type" view_mode="tree,form" />
+
+      <act_window id="action_comm_doc_all" name="เอกสารทั้งหมด" res_model="comm.doc" view_mode="tree,form,kanban" />
+
+      <act_window id="action_comm_doc_procurement" name="เอกสารจัดซื้อ-จัดจ้าง" res_model="comm.procurement" view_mode="tree,form,kanban" />
+
+      <record id="action_comm_doc" model="ir.actions.server">
+            <field name="name">เอกสาร คำสั่ง</field>
+            <field name="model_id" ref="model_comm_doc" />
+            <field name="state">code</field>
+            <field name="code">action = model.open_comm_doc(1,'เอกสาร คำสั่ง')</field>
+      </record>
+      <record id="action_comm_contract" model="ir.actions.server">
+            <field name="name">สัญญาจัดซื้อจัดจ้าง</field>
+            <field name="model_id" ref="model_comm_doc" />
+            <field name="state">code</field>
+            <field name="code">action = model.open_comm_doc(2,'สัญญาจัดซื้อจัดจ้าง')</field>
+      </record>
+
+      <menuitem id="comm_menu" name="เอกสาร" action="action_comm_doc_all" />
+
+      <menuitem id="menu_comm_doc_doc" name="คำสั่ง" action="action_comm_doc" parent="comm_menu" />
+
+      <menuitem id="menu_comm_doc_contract" name="สัญญาจัดซื้อจัดจ้าง" action="action_comm_contract" parent="comm_menu" />
+
+      <menuitem id="menu_comm_doc_procurement" name="จัดซื้อ-จัดจ้าง" action="action_comm_doc_procurement" parent="comm_menu" />
+      
+      <menuitem id="comm_doc_config" name="Configuration" parent="comm_menu" />
+      <menuitem id="menu_comm_doc_type" name="ประเภทเอกสาร" action="action_comm_doc_type" parent="comm_doc_config" />
+
+
+</odoo>

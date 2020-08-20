@@ -1,0 +1,67 @@
+<?xml version="1.0" ?>
+<odoo>
+
+  <record id="view_form_doc" model="ir.ui.view">
+    <field name="name">document Form</field>
+    <field name="model">comm.doc</field>
+    <field name="arch" type="xml">
+      <form string="doc">
+
+        <sheet>
+          <group>
+          <group>
+            <field name="doc_type_id" />
+            <field name="name" />
+          </group>
+          <group>
+            <field name="doc_number" />
+            <field name="date_published" />
+          </group>
+          <group>
+            <field name="chairman_id" /> 
+          </group>
+          <group>
+            <field name="secretary_id" />
+          </group>
+          
+            <field name="active" />
+            <field name="description" widget="html" />
+            <field name="upload_file" filename="file_name" widget="pdf_viewer" />
+            <field name="file_name" widget="url" attrs="{'invisible': True}" />
+
+          </group>
+        
+        </sheet>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_tree_doc" model="ir.ui.view">
+    <field name="name">document List</field>
+    <field name="model">comm.doc</field>
+    <field name="arch" type="xml">
+      <tree>
+        <field name="name" />
+        <field name="doc_number" />
+        <field name="date_published" />
+        <field name="chairman_id" />
+        <field name="secretary_id" />
+
+
+      </tree>
+    </field>
+  </record>
+
+  <record id="view_search_doc" model="ir.ui.view">
+    <field name="name">document Filters</field>
+    <field name="model">comm.doc</field>
+    <field name="arch" type="xml">
+      <search>
+        <field name="name" />
+        <filter name="filter_inactive" string="Inactive" domain="[('active','=',True)]" />
+        <filter name="filter_active" string="Active" domain="[('active','=',False)]" />
+      </search>
+    </field>
+  </record>
+
+</odoo>

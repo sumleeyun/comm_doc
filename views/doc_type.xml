@@ -1,0 +1,34 @@
+<?xml version="1.0" ?>
+<odoo>
+	<record id="view_form_doc_type" model="ir.ui.view">
+		<field name="name">ประเภทเอกสาร</field>
+		<field name="model">comm.doc_type</field>
+		<field name="arch" type="xml">
+			<form string="ประเภทเอกสาร">
+				<header></header>
+				<sheet>
+					<group name="group_top">
+						<group name="group_left">
+							<field name="doc_type_id" />
+							<field name="name" />
+						</group>
+						<group name="group_right">
+							<field name="active" />
+						</group>
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="view_tree_doc_type" model="ir.ui.view">
+		<field name="name">ประเภทเอกสาร</field>
+		<field name="model">comm.doc_type</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="doc_type_id" />
+				<field name="name" />
+				<field name="active" />
+			</tree>
+		</field>
+	</record>
+</odoo>

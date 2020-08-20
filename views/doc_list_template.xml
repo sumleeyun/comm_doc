@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+  <template id="doc_list_template" name="doc List">
+    <t t-call="website.layout">
+
+      <div id="wrap" class="container">
+        <h1>document</h1>
+        <t t-foreach="docs" t-as="doc">
+          <div class="row">
+            <table class="table table-striped" >
+              <tr>
+                <td>
+                  <span t-field="doc.name" />
+                </td>
+
+                <td>
+                  <span t-field="doc.doc_number" />
+                </td>
+
+                <td>
+                  <span t-field="doc.date_published" />
+                </td>
+
+                <td>
+                  <span t-field="doc.chairman_id" />
+                </td>
+                <td>
+                  <span t-field="doc.secretary_id" />
+                </td>
+                <td>
+                  <span t-field ="doc.upload_file"/>
+                  <a href="/comm/doc#top"><span t-field="doc.file_name" /> </span>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </t>
+      </div>
+    </t>
+  </template>
+
+</odoo>
