@@ -21,7 +21,7 @@ class doc(models.Model):
     description = fields.Html('Description')
     doc_type_id = fields.Many2one('comm.doc_type', string='ประเภทของเอกสาร')
 
-    # @api.multi
+    
     def open_comm_doc(self, val1, val2):
 
         form_id = self.env.ref('comm_doc.view_form_doc').id
@@ -39,3 +39,4 @@ class doc(models.Model):
             },
             'res_model': 'comm.doc',
         }
+#test demod
